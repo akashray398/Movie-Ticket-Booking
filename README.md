@@ -78,7 +78,6 @@ It also includes an admin section for managing movies, theatres, shows, customer
 
 ---
 
-## 🏗️ System Architecture
 
 ## 🏗️ System Architecture
 
@@ -123,6 +122,7 @@ Entity Framework Core
 SQL Server Database
 
 ```
+---
 
 ### 📌 Folder Overview
 
