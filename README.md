@@ -104,40 +104,6 @@ flowchart TD
 
     Middleware[⚠️ Exception Middleware] --> Controller
 
- ---
-
-## 🎟️ Booking Flow
-
-The booking process follows a simple step-by-step flow from selecting a movie to confirming the ticket.
-
-```mermaid
-flowchart TD
-
-    A[👤 User Login] --> B[🎬 View Movies]
-
-    B --> C[📅 Select Show]
-
-    C --> D[💺 Check Available Seats]
-
-    D --> E[🎫 Select Seats]
-
-    E --> F{Seats Available?}
-
-    F -->|No| G[❌ Seat Not Available]
-
-    F -->|Yes| H[💰 Calculate Booking Amount]
-
-    H --> I[✅ Create Booking]
-
-    I --> J[🎟️ Booking Confirmation]
-
-    J --> K{Cancel Booking?}
-
-    K -->|Yes| L[❌ Cancel Booking]
-
-    L --> M[💺 Release Seats]
-
-    K -->|No| N[✔ Booking Completed]
 
 ---
 ## 📂 Project Structure
