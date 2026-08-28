@@ -1,137 +1,104 @@
 # 🎬 Movie Ticket Booking System
 
-A full-stack Movie Ticket Booking System developed using **C#, ASP.NET Core, Entity Framework Core, and SQL Server**.
+<p align="center">
+  <img src="https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/C%23-Programming-239120?logo=csharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/ASP.NET_Core-MVC%20%7C%20Web_API-512BD4?logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/Entity_Framework-Core-512BD4" />
+  <img src="https://img.shields.io/badge/SQL_Server-Database-CC2927?logo=microsoftsqlserver&logoColor=white" />
+  <img src="https://img.shields.io/badge/Swagger-API-85EA2D?logo=swagger&logoColor=black" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+</p>
 
-I developed this project as part of my .NET learning and training to understand how C# concepts can be used in a complete web application.
+<p align="center">
+  A full-stack Movie Ticket Booking System built using
+  <b>C#, ASP.NET Core, Entity Framework Core and SQL Server.</b>
+</p>
+
+---
 
 ## 📌 About the Project
 
-The Movie Ticket Booking System allows users to view movies, theatres and shows, check available seats, and book movie tickets.
+Movie Ticket Booking System is a full-stack .NET application developed to understand how C# and ASP.NET Core concepts work together in a complete web application.
 
-The project also includes an admin section for managing movies, theatres, shows, customers and bookings.
+The application allows users to view movies and shows, check available seats, book tickets and cancel bookings.
+
+It also includes an admin section for managing movies, theatres, shows, customers and bookings.
+
+---
 
 ## ✨ Features
 
-- View available movies and shows
-- Movie and theatre management
-- Customer management
-- User login
-- Check available seats
-- Book movie tickets
-- Booking confirmation
-- Cancel bookings
-- Admin dashboard
-- REST API support
-- Swagger API testing
-- SQL Server database integration
+- 🎥 View and manage movies
+- 🏢 Theatre management
+- 📅 Show management
+- 👤 Customer management
+- 🔐 Login system
+- 💺 Check available seats
+- 🎟️ Book movie tickets
+- 💰 Automatic amount calculation
+- ✅ Booking confirmation
+- ❌ Booking cancellation
+- 🪑 Seat availability management
+- 🛠️ Admin dashboard
+- 🌐 REST API support
+- 📖 Swagger / OpenAPI
+- 🗄️ SQL Server integration
+- ⚠️ Validation and exception handling
 
-## 🛠️ Technologies Used
+---
 
-- C#
-- .NET 10
-- ASP.NET Core
-- ASP.NET Core MVC
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQL Server
-- LINQ
-- Razor Views
-- HTML
-- CSS
-- Bootstrap
-- Swagger / OpenAPI
+## 🛠️ Technology Stack
 
-## 📂 Project Structure
+<p>
+  <img src="https://img.shields.io/badge/C%23-Language-239120?logo=csharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/ASP.NET_Core-Web_Framework-512BD4" />
+  <img src="https://img.shields.io/badge/MVC-Razor_Views-blue" />
+  <img src="https://img.shields.io/badge/Web_API-REST-orange" />
+  <img src="https://img.shields.io/badge/EF_Core-ORM-purple" />
+  <img src="https://img.shields.io/badge/SQL_Server-Database-CC2927?logo=microsoftsqlserver&logoColor=white" />
+  <img src="https://img.shields.io/badge/LINQ-Querying-blueviolet" />
+  <img src="https://img.shields.io/badge/Bootstrap-UI-7952B3?logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/Swagger-API_Testing-85EA2D?logo=swagger&logoColor=black" />
+</p>
 
-Movie-Ticket-Booking/
-│
-├── Controllers/
-├── Data/
-├── Database/
-├── DTOs/
-├── Exceptions/
-├── Models/
-├── Middleware/
-├── Services/
-├── Views/
-├── wwwroot/
-├── Program.cs
-├── appsettings.json
-└── MovieTicketBooking.csproj
+| Area | Technology |
+|---|---|
+| Language | C# |
+| Runtime | .NET 10 |
+| Framework | ASP.NET Core |
+| Frontend | MVC, Razor, HTML, CSS, Bootstrap |
+| API | ASP.NET Core Web API |
+| ORM | Entity Framework Core |
+| Database | SQL Server |
+| Querying | LINQ |
+| API Testing | Swagger / OpenAPI |
+| Architecture | MVC + Service Layer + Dependency Injection |
 
-## ⚙️ How to Run
+---
 
-### 1. Clone the repository
+## 🏗️ System Architecture
 
-git clone https://github.com/akashray398/Movie-Ticket-Booking.git
+```mermaid
+flowchart TD
 
-cd Movie-Ticket-Booking
+    User[👤 User / Admin]
 
-### 2. Restore packages
+    User --> MVC[🌐 ASP.NET Core MVC]
+    User --> API[🔗 Web API]
 
-dotnet restore
+    MVC --> Controller[🎮 Controllers]
+    API --> Controller
 
-### 3. Update the database
+    Controller --> Service[⚙️ Service Layer]
 
-dotnet ef database update --project .\MovieTicketBooking\MovieTicketBooking.csproj
+    Service --> Validation[✅ Business Logic & Validation]
 
-### 4. Run the project
+    Validation --> EF[📦 Entity Framework Core]
 
-dotnet run --project .\MovieTicketBooking\MovieTicketBooking.csproj
+    EF --> DB[(🗄️ SQL Server Database)]
 
-After running the project, open the URL displayed in the terminal in your browser.
+    Service --> DTO[📄 DTOs]
 
-## 🔑 Demo Login
-
-### Admin
-
-Login ID: MOVIEADMIN  
-Password: MOVIEADMIN  
-Login Type: A
-
-### Customer
-
-Login ID: 1001  
-Password: 1001  
-Login Type: C
-
-> These credentials are only provided for project demonstration.
-
-## 📚 What I Learned
-
-While developing this project, I practiced and learned:
-
-- C# and Object-Oriented Programming
-- ASP.NET Core MVC
-- REST API development
-- CRUD operations
-- Entity Framework Core
-- SQL Server integration
-- LINQ
-- Dependency Injection
-- Exception Handling
-- Middleware
-- DTOs
-- Database migrations
-- Basic service-layer architecture
-
-## 🚀 Future Improvements
-
-Some features that can be added in the future:
-
-- JWT authentication
-- Online payment integration
-- Email ticket confirmation
-- Better seat selection UI
-- Role-based authorization
-- Deployment to cloud
-
-## 👨‍💻 Author
-
-**Akash Yadav**
-
-GitHub: @akashray398
-
-## 📄 License
-
-This project is licensed under the MIT License.
+    Middleware[⚠️ Exception Middleware] --> Controller
