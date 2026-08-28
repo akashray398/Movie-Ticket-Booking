@@ -81,6 +81,7 @@ It also includes an admin section for managing movies, theatres, shows, customer
 ## 🏗️ System Architecture
 
 ```mermaid
+
 flowchart TD
 
     User[👤 User / Admin]
@@ -104,6 +105,7 @@ flowchart TD
     Middleware[⚠️ Exception Middleware] --> Controller
 
  ---
+
 ## 🎟️ Booking Flow
 
 The booking process follows a simple step-by-step flow from selecting a movie to confirming the ticket.
@@ -337,3 +339,109 @@ POST /api/login
 > 📖 All available API endpoints can also be explored and tested using **Swagger** at `/swagger`.
 
 ---
+## 🧠 Concepts Used & What I Learned
+
+This project helped me understand how different **C# and .NET concepts** work together in a complete web application.
+
+### 📚 Concepts Used
+
+<p>
+  <img src="https://img.shields.io/badge/C%23-OOP-239120?logo=csharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/LINQ-Querying-blueviolet" />
+  <img src="https://img.shields.io/badge/EF_Core-ORM-512BD4" />
+  <img src="https://img.shields.io/badge/REST-API-orange" />
+  <img src="https://img.shields.io/badge/SQL-Database-CC2927" />
+</p>
+
+- C# and Object-Oriented Programming
+- Classes and Objects
+- Collections and LINQ
+- Exception Handling
+- ASP.NET Core MVC
+- Razor Views
+- REST API and CRUD Operations
+- Entity Framework Core
+- SQL Server
+- DTOs
+- Dependency Injection
+- Middleware
+- Service Layer
+- Database Migrations
+- Input Validation
+
+### 🎯 What I Learned
+
+While developing this project, I gained practical experience in:
+
+- Building an ASP.NET Core MVC application
+- Creating and testing REST APIs
+- Connecting a C# application with SQL Server
+- Performing CRUD operations
+- Using Entity Framework Core and LINQ
+- Organizing business logic using services
+- Handling exceptions and validations
+- Managing movie bookings and seat availability
+
+---
+## 🚀 Future Improvements
+
+The current version covers the main movie booking functionalities. In the future, the project can be improved with more advanced features.
+
+<p>
+  <img src="https://img.shields.io/badge/Future-Enhancements-blueviolet" />
+  <img src="https://img.shields.io/badge/Status-Planned-yellow" />
+</p>
+
+- 🔐 JWT Authentication & Role-Based Authorization
+- 💳 Online Payment Integration
+- 📧 Email Booking Confirmation
+- 🎫 Downloadable Digital Tickets
+- 💺 Interactive Seat Selection
+- 🔔 Booking Notifications
+- 📊 Admin Analytics Dashboard
+- 🔍 Advanced Movie Search & Filtering
+- ☁️ Cloud Deployment
+- 📱 Improved Responsive UI
+
+These improvements can make the application more secure, user-friendly, and closer to a real-world movie booking platform.
+
+---
+## 📜 License
+
+<p>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+</p>
+
+This project is licensed under the **MIT License**.
+
+Copyright © 2026 **Akash Yadav**
+
+See the [LICENSE](LICENSE) file for complete license details.
+
+---
+
+## 👨‍💻 Author
+
+<p>
+  <img src="https://img.shields.io/badge/Developer-Akash_Yadav-blue" />
+  <img src="https://img.shields.io/badge/GitHub-akashray398-181717?logo=github&logoColor=white" />
+</p>
+
+**Akash Yadav**
+
+- GitHub: [@akashray398](https://github.com/akashray398)
+- Repository: [Movie Ticket Booking System](https://github.com/akashray398/Movie-Ticket-Booking)
+
+---
+
+<p align="center">
+  <b>🎬 Movie Ticket Booking System</b>
+</p>
+
+<p align="center">
+  Built with ❤️ using C# • ASP.NET Core • Entity Framework Core • SQL Server
+</p>
+
+<p align="center">
+  ⭐ If you found this project useful, consider giving the repository a star!
+</p>
