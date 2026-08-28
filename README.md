@@ -102,3 +102,238 @@ flowchart TD
     Service --> DTO[📄 DTOs]
 
     Middleware[⚠️ Exception Middleware] --> Controller
+
+ ---
+## 🎟️ Booking Flow
+
+The booking process follows a simple step-by-step flow from selecting a movie to confirming the ticket.
+
+```mermaid
+flowchart TD
+
+    A[👤 User Login] --> B[🎬 View Movies]
+
+    B --> C[📅 Select Show]
+
+    C --> D[💺 Check Available Seats]
+
+    D --> E[🎫 Select Seats]
+
+    E --> F{Seats Available?}
+
+    F -->|No| G[❌ Seat Not Available]
+
+    F -->|Yes| H[💰 Calculate Booking Amount]
+
+    H --> I[✅ Create Booking]
+
+    I --> J[🎟️ Booking Confirmation]
+
+    J --> K{Cancel Booking?}
+
+    K -->|Yes| L[❌ Cancel Booking]
+
+    L --> M[💺 Release Seats]
+
+    K -->|No| N[✔ Booking Completed]
+
+---
+## 📂 Project Structure
+
+The project is organized into separate folders to keep the code simple, structured, and easy to maintain.
+
+```text
+Movie-Ticket-Booking/
+│
+├── 📄 README.md
+├── 📄 LICENSE
+├── 📄 .gitignore
+│
+└── MovieTicketBooking/
+    │
+    ├── 🎮 Controllers/
+    │   └── ApiControllers.cs
+    │
+    ├── 💾 Data/
+    │   └── MovieDataStore.cs
+    │
+    ├── 🗄️ Database/
+    │   ├── DatabaseConnectionSettings.cs
+    │   ├── DatabaseInitializer.cs
+    │   ├── MovieDatabaseService.cs
+    │   ├── MovieDbContext.cs
+    │   ├── MovieDbContextFactory.cs
+    │   └── Migrations/
+    │
+    ├── 📦 DTOs/
+    ├── ⚠️ Exceptions/
+    ├── 📚 Models/
+    ├── 🔧 Middleware/
+    ├── ⚙️ Services/
+    ├── 🖥️ Views/
+    │
+    ├── 🌐 Web/
+    │   └── Controllers/
+    │
+    ├── 🎨 wwwroot/
+    │   └── css/
+    │
+    ├── 📁 DataFiles/
+    │
+    ├── Program.cs
+    ├── appsettings.json
+    └── MovieTicketBooking.csproj
+```
+
+### 📌 Folder Overview
+
+| Folder | Purpose |
+|---|---|
+| `Controllers` | Handles API requests |
+| `Models` | Contains application data models |
+| `DTOs` | Transfers data between API and application |
+| `Services` | Contains business logic |
+| `Database` | Handles EF Core and database configuration |
+| `Middleware` | Handles application-level exceptions |
+| `Views` | Contains Razor UI pages |
+| `wwwroot` | Contains CSS and static files |
+| `DataFiles` | Stores file-based application data |
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project on your local system.
+
+### 📋 Prerequisites
+
+Make sure you have the following installed:
+
+- .NET SDK 10
+- SQL Server Express
+- Git
+- Visual Studio or VS Code
+- SQL Server Management Studio *(optional)*
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/akashray398/Movie-Ticket-Booking.git
+cd Movie-Ticket-Booking
+```
+
+### 2️⃣ Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+### 3️⃣ Configure SQL Server
+
+The project uses the following local SQL Server connection:
+
+```text
+Server=.\SQLEXPRESS;
+Database=MovieTicketBookingDB;
+Trusted_Connection=True;
+TrustServerCertificate=True;
+```
+
+> Keep passwords, API keys, and private connection strings out of GitHub.
+
+### 4️⃣ Update the Database
+
+```bash
+dotnet ef database update --project .\MovieTicketBooking\MovieTicketBooking.csproj
+```
+
+### 5️⃣ Run the Application
+
+```bash
+dotnet run --project .\MovieTicketBooking\MovieTicketBooking.csproj
+```
+
+After running, open the application URL displayed in the terminal.
+
+---
+## 🔑 Demo Credentials
+
+Use the following credentials to test the login functionality.
+
+### 👨‍💼 Administrator
+
+```text
+Login ID   : MOVIEADMIN
+Password   : MOVIEADMIN
+Login Type : A
+```
+
+### 👤 Customer
+
+```text
+Login ID   : 1001
+Password   : 1001
+Login Type : C
+```
+
+> **Note:** These credentials are provided only for project demonstration and testing purposes.
+
+---
+## 🌐 Application Routes & REST API
+
+The application provides both **MVC pages** for the user interface and **REST API endpoints** for accessing and managing data.
+
+### 🖥️ Application Routes
+
+| Page | Route |
+|---|---|
+| 🏠 Home | `/` |
+| 🎬 Movies | `/Movies` |
+| 🏢 Theatres | `/Theatres` |
+| 📅 Shows | `/Shows` |
+| 💺 Available Seats | `/Shows/AvailableSeats/{showId}` |
+| 👤 Customers | `/Customers` |
+| 🎟️ Bookings | `/Bookings` |
+| ➕ Create Booking | `/Bookings/Create` |
+| ✅ Confirmation | `/Bookings/Confirmation/{bookingId}` |
+| 🛠️ Admin Dashboard | `/Admin` |
+| 🔐 Login | `/Login` |
+| 📖 Swagger | `/swagger` |
+
+### 🔗 REST API
+
+#### 🎬 Movies
+
+```http
+GET    /api/movies
+GET    /api/movies/{movieId}
+GET    /api/movies/search?name=action
+POST   /api/movies
+PUT    /api/movies/{movieId}
+DELETE /api/movies/{movieId}
+```
+
+#### 🏢 Theatres, Customers & Shows
+
+```http
+GET, POST, PUT, DELETE /api/theatres
+GET, POST, PUT, DELETE /api/customers
+GET, POST, PUT, DELETE /api/shows
+
+GET /api/shows/{showId}/available-seats
+```
+
+#### 🎟️ Bookings & Login
+
+```http
+GET, POST, PUT, DELETE /api/bookings
+GET /api/bookings/{bookingId}
+GET /api/bookings/show/{showId}/available-seats
+
+PUT  /api/bookings/{bookingId}/cancel
+POST /api/login
+```
+
+> 📖 All available API endpoints can also be explored and tested using **Swagger** at `/swagger`.
+
+---
