@@ -80,77 +80,48 @@ It also includes an admin section for managing movies, theatres, shows, customer
 
 ## 🏗️ System Architecture
 
-```mermaid
+## 🏗️ System Architecture
 
+```mermaid
 flowchart TD
 
-    User[👤 User / Admin]
-
-    User --> MVC[🌐 ASP.NET Core MVC]
-    User --> API[🔗 Web API]
+    User[👤 User / Admin] --> MVC[🌐 ASP.NET Core MVC / Web API]
 
     MVC --> Controller[🎮 Controllers]
-    API --> Controller
-
     Controller --> Service[⚙️ Service Layer]
-
     Service --> Validation[✅ Business Logic & Validation]
-
     Validation --> EF[📦 Entity Framework Core]
-
     EF --> DB[(🗄️ SQL Server Database)]
 
-    Service --> DTO[📄 DTOs]
+    Controller --> DTO[📄 DTOs]
+    Controller --> Views[🖥️ Razor Views]
 
     Middleware[⚠️ Exception Middleware] --> Controller
+```
 
-
----
-## 📂 Project Structure
-
-The project is organized into separate folders to keep the code simple, structured, and easy to maintain.
+### Architecture Flow
 
 ```text
-Movie-Ticket-Booking/
-│
-├── 📄 README.md
-├── 📄 LICENSE
-├── 📄 .gitignore
-│
-└── MovieTicketBooking/
-    │
-    ├── 🎮 Controllers/
-    │   └── ApiControllers.cs
-    │
-    ├── 💾 Data/
-    │   └── MovieDataStore.cs
-    │
-    ├── 🗄️ Database/
-    │   ├── DatabaseConnectionSettings.cs
-    │   ├── DatabaseInitializer.cs
-    │   ├── MovieDatabaseService.cs
-    │   ├── MovieDbContext.cs
-    │   ├── MovieDbContextFactory.cs
-    │   └── Migrations/
-    │
-    ├── 📦 DTOs/
-    ├── ⚠️ Exceptions/
-    ├── 📚 Models/
-    ├── 🔧 Middleware/
-    ├── ⚙️ Services/
-    ├── 🖥️ Views/
-    │
-    ├── 🌐 Web/
-    │   └── Controllers/
-    │
-    ├── 🎨 wwwroot/
-    │   └── css/
-    │
-    ├── 📁 DataFiles/
-    │
-    ├── Program.cs
-    ├── appsettings.json
-    └── MovieTicketBooking.csproj
+User
+   │
+   ▼
+ASP.NET Core MVC / Web API
+   │
+   ▼
+Controllers
+   │
+   ▼
+Service Layer
+   │
+   ▼
+Business Logic & Validation
+   │
+   ▼
+Entity Framework Core
+   │
+   ▼
+SQL Server Database
+
 ```
 
 ### 📌 Folder Overview
