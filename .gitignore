@@ -1,0 +1,21 @@
+# Build output
+**/bin/
+**/obj/
+
+# Local development configuration and secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.*.local.json
+
+# User-specific IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Test and coverage output
+TestResults/
+coverage/
+
+# Local logs and generated files
+*.log

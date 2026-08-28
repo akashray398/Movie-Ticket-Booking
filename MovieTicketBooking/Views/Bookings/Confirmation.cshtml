@@ -1,0 +1,3 @@
+@model BookingDto
+@{ ViewData["Title"] = "Booking Confirmation"; }
+<div class="card"><div class="card-body"><h1>Booking Confirmation</h1><p><strong>Booking ID:</strong> @Model.BookingID</p><p><strong>Movie:</strong> @Model.MovieName</p><p><strong>Theatre:</strong> @Model.TheatreName</p><p><strong>Seats:</strong> @string.Join(", ", Model.SeatNumbers)</p><p><strong>Seat type:</strong> @Model.SeatType</p><p><strong>Amount:</strong> @Model.Amount</p><p><strong>Status:</strong> @Model.BookingStatus</p><button class="btn btn-primary" onclick="window.print()">Print</button></div></div>

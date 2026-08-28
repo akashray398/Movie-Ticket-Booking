@@ -1,0 +1,3 @@
+@model IEnumerable<ShowDto>
+@{ ViewData["Title"] = "Shows"; }
+<h1>Shows</h1><div class="table-responsive"><table class="table table-striped"><thead><tr><th>Movie</th><th>Theatre</th><th>Dates</th><th>Rates</th><th></th></tr></thead><tbody>@foreach (var show in Model) { <tr><td>@show.MovieName</td><td>@show.TheatreName</td><td>@show.StartDate:g - @show.EndDate:g</td><td>P @show.PlatinumSeatRate · G @show.GoldSeatRate · S @show.SilverSeatRate</td><td><a class="btn btn-sm btn-outline-primary" asp-action="AvailableSeats" asp-route-id="@show.ShowID">Available seats</a></td></tr> }</tbody></table></div>

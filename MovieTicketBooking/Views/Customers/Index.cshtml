@@ -1,0 +1,3 @@
+@model IEnumerable<CustomerDto>
+@{ ViewData["Title"] = "Customers"; }
+<h1>Customers</h1><div class="table-responsive"><table class="table table-striped"><thead><tr><th>ID</th><th>Name</th><th>City</th></tr></thead><tbody>@foreach (var customer in Model) { <tr><td>@customer.CustomerID</td><td>@customer.CustomerName</td><td>@customer.City</td></tr> }</tbody></table></div>

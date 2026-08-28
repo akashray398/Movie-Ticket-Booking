@@ -1,0 +1,3 @@
+@model IEnumerable<MovieDto>
+@{ ViewData["Title"] = "Movies"; }
+<h1>Movies</h1><div class="row g-3">@foreach (var movie in Model) { <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><h2 class="h5">@movie.MovieName</h2><p class="mb-1">@movie.Genre · @movie.Language</p><p class="mb-1">Director: @movie.DirectorName</p><p>Duration: @movie.Duration hours</p><a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@movie.MovieID">View Details</a></div></div></div> }</div>

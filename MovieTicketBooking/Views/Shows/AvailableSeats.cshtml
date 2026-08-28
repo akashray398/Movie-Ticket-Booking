@@ -1,0 +1,3 @@
+@model IEnumerable<int>
+@{ ViewData["Title"] = "Available Seats"; }
+<h1>Available Seats</h1><div class="d-flex flex-wrap gap-2">@foreach (var seat in Model) { <span class="badge text-bg-success p-2">@seat</span> }</div>

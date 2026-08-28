@@ -1,0 +1,3 @@
+@model MovieDto
+@{ ViewData["Title"] = Model.MovieName; }
+<h1>@Model.MovieName</h1><dl class="row"><dt class="col-sm-3">Director</dt><dd class="col-sm-9">@Model.DirectorName</dd><dt class="col-sm-3">Producer</dt><dd class="col-sm-9">@Model.ProducerName</dd><dt class="col-sm-3">Duration</dt><dd class="col-sm-9">@Model.Duration hours</dd><dt class="col-sm-3">Genre</dt><dd class="col-sm-9">@Model.Genre</dd><dt class="col-sm-3">Language</dt><dd class="col-sm-9">@Model.Language</dd><dt class="col-sm-3">Story</dt><dd class="col-sm-9">@Model.Story</dd></dl>
