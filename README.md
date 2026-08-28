@@ -97,6 +97,7 @@ flowchart TD
 
     Middleware[⚠️ Exception Middleware] --> Controller
 ```
+---
 
 ### Architecture Flow
 
